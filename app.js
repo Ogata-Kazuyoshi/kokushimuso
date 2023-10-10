@@ -1,3 +1,5 @@
+// console.log(bacefook.newsfeed);
+
 window.addEventListener("load", () => {
   // This is a check to see if there's a username stored
   let username = localStorage.getItem("username");
@@ -13,9 +15,12 @@ window.addEventListener("load", () => {
   for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
     const post = bacefook.newsfeed[index];
 
+    const resultDate = getDateString(post.timestamp);
+    const resultFeeling = post.feeling;
+    console.log(resultDate);
     const friendEl = document.createElement("div");
     friendEl.className = "friend";
-    friendEl.innerText = post.friend;
+    friendEl.innerText = `${post.friend}  ${resultDate} ${resultFeeling}`;
 
     const postEl = document.createElement("div");
     postEl.innerText = post.text;

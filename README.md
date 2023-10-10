@@ -15,10 +15,11 @@
 
 ## 要件
 
-- チーム名を決める :　国士無双　「① 共通の趣味麻雀 ② インパクトがあって、有名な役 ③ ２人といない秀でた人物に今後なっていきます。（確率０.０４％）」
-- GitHub に新規リポジトリ（public/公開）を作成し、全てのファイルをアップロード。リポジトリの URL をフォームで提出
-  - [URL 提出フォーム](https://forms.gle/9H1vAyJqZ5HWzGdA9)
-  - 提出期限：10/12（木）中
+-OK チーム名を決める :　国士無双　「① 共通の趣味麻雀 ② インパクトがあって、有名な役 ③ ２人といない秀でた人物に今後なっていきます。（確率０.０４％）」
+-OK GitHub に新規リポジトリ（public/公開）を作成し、全てのファイルをアップロード。リポジトリの URL をフォームで提出
+
+- [URL 提出フォーム](https://forms.gle/9H1vAyJqZ5HWzGdA9)
+- 提出期限：10/12（木）中
 - Basic Requirements - 基礎レベル（ページ下部に記載）を完了
 - 自分がユーザーだったら欲しい機能を最低 1 つペアと考えて実装
 - セマンティックタグを使用し、実際の SNS のように見た目を整える
@@ -56,32 +57,32 @@
 
 まず、Chrome で `index.html` を開いて、投稿（post）が表示 👀 できていることを確認しましょう。
 
-- [ ] これらのメソッドについて読んでください。全てのメソッドを使用しないかもしれませんが、知っておくと役に立つでしょう。
+- [ ⭕️] これらのメソッドについて読んでください。全てのメソッドを使用しないかもしれませんが、知っておくと役に立つでしょう。
 
-  - [myButton.addEventListener("click", myFunction);](https://developer.mozilla.org/ja/docs/Web/API/EventTarget/addEventListener)
+  -⭕️[myButton.addEventListener("click", myFunction);](https://developer.mozilla.org/ja/docs/Web/API/EventTarget/addEventListener)
 
-  - [document.createElement("div")](https://developer.mozilla.org/ja/docs/Web/API/Document/createElement)
+  - ⭕️[document.createElement("div")](https://developer.mozilla.org/ja/docs/Web/API/Document/createElement)
 
-  - [document.getElementById(id)](https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById)
+  - ⭕️[document.getElementById(id)](https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById)
 
-  - [document.querySelector(selector)](https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector)
+  - ⭕️[document.querySelector(selector)](https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector)
 
-  - [parent.append(child);](https://developer.mozilla.org/ja/docs/Web/API/Element/append)
+  - ⭕️[parent.append(child);](https://developer.mozilla.org/ja/docs/Web/API/Element/append)
 
-  - [myDiv.innerHTML = "Hi!"](https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML)
+  - ⭕️[myDiv.innerHTML = "Hi!"](https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML)
 
-  - [setTimeout(functionName, number of milliseconds to wait before calling it)](https://developer.mozilla.org/ja/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
+  - ⭕️[setTimeout(functionName, number of milliseconds to wait before calling it)](https://developer.mozilla.org/ja/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
 
-  - [setInterval(functionName, number of milliseconds to wait between calling it)](https://developer.mozilla.org/ja/docs/Web/API/Window/setInterval)
+  - ⭕️[setInterval(functionName, number of milliseconds to wait between calling it)](https://developer.mozilla.org/ja/docs/Web/API/Window/setInterval)
 
-- [ ] `app.js` と `dataGenerator.js` に書いてあるコードを読んでください。
-  - [ ] これらのファイルのコードが何をしているかを確認してください。
-  - [ ] 分からないことがあれば調べましょう！
+- [⭕️] `app.js` と `dataGenerator.js` に書いてあるコードを読んでください。
+  - [⭕️ ] これらのファイルのコードが何をしているかを確認してください。
+  - [ ⭕️] 分からないことがあれば調べましょう！
 - [ ] `scheduler` によって生成された新しい Bacefook への投稿を画面に表示しましょう。以下のどちらかの方法で実装しましょう：
-  - [ ] 投稿作成時に新しい投稿を自動的に表示する
+  - [ ⭕️] 投稿作成時に新しい投稿を自動的に表示する
   - [ ] もしくは、新しい投稿を表示するための更新ボタンを追加し、クリック時に投稿を表示する
-- [ ] 投稿が作成されたときのタイムスタンプを表示しましょう。
-- [ ] 投稿に対する '気持ち（feeling）' を表示しましょう。
+- [⭕️ ] 投稿が作成されたときのタイムスタンプを表示しましょう。
+- [⭕️ ] 投稿に対する '気持ち（feeling）' を表示しましょう。
 - [ ] 作成された投稿に画像を追加して表示しましょう。
   - 画像を格納するフォルダと、`images` という空の配列の変数は作成済です。
 - [ ] `css` ファイルを追加してページのスタイルを整え、見た目を改善しましょう。

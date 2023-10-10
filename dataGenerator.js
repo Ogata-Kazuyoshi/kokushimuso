@@ -9,11 +9,16 @@
   bacefook.newsfeed = [];
   bacefook.friends = {};
   bacefook.friendNames = ["tamaroh", "kani", "eriko", "tsubasa", "masataka"];
-  bacefook.friendNames.forEach(name => {
+  bacefook.friendNames.forEach((name) => {
     bacefook.friends[name] = [];
   });
+  // friends = {
+  //   tamaroh: [],
+  //   kani: [],
+  //   eriko: [],
+  // };
 
-  const getRandomElement = array => {
+  const getRandomElement = (array) => {
     // Given an array, returns a random element
     const randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
@@ -29,7 +34,7 @@
     "a salaryman",
     "yesterday I",
     "a ninja",
-    "my boss"
+    "my boss",
   ];
   const verbs = [
     "ate",
@@ -48,7 +53,7 @@
     "ran to",
     "worked on",
     "slept on",
-    "slept in"
+    "slept in",
   ];
   const fillers = [
     "my",
@@ -64,7 +69,7 @@
     "",
     "the best",
     "the greatest",
-    "a delightful"
+    "a delightful",
   ];
   const nouns = [
     "DIG",
@@ -89,7 +94,7 @@
     "unicorn",
     "mess",
     "pirate ship",
-    "ninja"
+    "ninja",
   ];
   const hashtags = [
     "#DIG",
@@ -104,7 +109,7 @@
     "#hashtags",
     "#japanlife",
     "#oops",
-    ""
+    "",
   ];
   const feelings = [
     "happy",
@@ -116,7 +121,7 @@
     "angry",
     "frustrated",
     "excited",
-    ""
+    "",
   ];
   const images = [];
 
@@ -126,32 +131,33 @@
       getRandomElement(verbs),
       getRandomElement(fillers),
       getRandomElement(nouns),
-      getRandomElement(hashtags)
+      getRandomElement(hashtags),
     ].join(" ");
   };
 
-  const generatePostObj = timeOffset => {
+  const generatePostObj = (timeOffset) => {
     // if an offset is provided, make the timestamp that much older, otherwise just use the current time
+    // console.log(timeOffset);
     const timestamp = timeOffset
       ? new Date(new Date().getTime() - timeOffset)
       : new Date();
-
+    // console.log(timestamp);
     return {
       friend: getRandomElement(bacefook.friendNames),
       text: generateRandomText(),
       feeling: getRandomElement(feelings),
       image: getRandomElement(images),
-      timestamp
+      timestamp,
     };
   };
 
-  const addPost = obj => {
+  const addPost = (obj) => {
     const friend = obj.friend;
     bacefook.friends[friend].push(obj);
     bacefook.newsfeed.push(obj);
   };
 
-  const createPost = timeOffset => {
+  const createPost = (timeOffset) => {
     const newPost = generatePostObj(timeOffset);
     addPost(newPost);
   };
@@ -164,6 +170,23 @@
 
   const scheduler = () => {
     createPost(null);
+    const newFeed = bacefook.newsfeed[bacefook.newsfeed.length - 1];
+    const newDate = newFeed.timestamp;
+    const reasultDate = getDateString(newDate);
+    const resultFeeling = newFeed.feeling;
+    const containerEl = document.querySelector("#newsfeed");
+    const friendEl = document.createElement("div");
+    const imageElm = document.createElement("img");
+    imageElm.src = "./images/image4.jpeg";
+    imageElm.alt = "麻雀";
+    friendEl.className = "friend";
+    friendEl.innerText = `${newFeed.friend}  ${reasultDate}  ${resultFeeling}`;
+
+    const postEl = document.createElement("div");
+    postEl.innerText = newFeed.text;
+    postEl.append(friendEl);
+
+    containerEl.prepend(postEl);
     setTimeout(scheduler, (3 + Math.random() * 5) * 1000); // generate a new post every 3 to 8 seconds
   };
 
