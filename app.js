@@ -1,6 +1,6 @@
 // console.log(bacefook.newsfeed);
 
-console.log(moment().format());
+// console.log(moment().format());
 
 const userManagement = {
   taka: "1234",
@@ -48,7 +48,9 @@ window.addEventListener("load", () => {
   ];
 
   // This makes things appear
-  postFeedHtml();
+  for (let index = 0; index < bacefook.newsfeed.length; index++) {
+    postFeedHtml(bacefook.newsfeed[index]);
+  }
   //addEvent for submit form
   const btn = document.querySelector("#btn");
   btn.addEventListener("click", (event) => {

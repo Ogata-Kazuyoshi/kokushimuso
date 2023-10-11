@@ -17,7 +17,6 @@
   //   kani: [],
   //   eriko: [],
   // };
-
   const getRandomElement = (array) => {
     // Given an array, returns a random element
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -141,6 +140,32 @@
     ].join(" ");
   };
 
+  const getRandomNum = () => {
+    const maxvalue = 100;
+    return Math.floor(Math.random() * maxvalue);
+  };
+
+  // day = new Date(2018, 8, 10, 03, 30, 20)
+  const dateTemp = [
+    [2023, 2, 2, 2, 2, 2],
+    [2023, 9, 8, 8, 8, 8],
+    [2023, 9, 9, 9, 9, 9],
+    [2023, 9, 10, 10, 10, 10],
+  ];
+  // console.log([...dateTemp[0]]);
+  // console.log(new Date(...dateTemp[0]));
+
+  for (let i = 0; i < 4; i++) {
+    bacefook.newsfeed.push({
+      friend: getRandomElement(bacefook.friendNames),
+      text: generateRandomText(),
+      feeling: getRandomElement(feelings),
+      image: getRandomElement(images),
+      timestamp: getDateString(new Date(...dateTemp[i])),
+      goodNum: getRandomNum(),
+    });
+  }
+
   const generatePostObj = (timeOffset) => {
     // if an offset is provided, make the timestamp that much older, otherwise just use the current time
     // console.log(timeOffset);
@@ -155,6 +180,7 @@
       feeling: getRandomElement(feelings),
       image: getRandomElement(images),
       timestamp: momentDate,
+      goodNum: getRandomNum(),
     };
   };
 
@@ -180,9 +206,15 @@
   const scheduler = () => {
     createPost(null);
     if (!initFlg) {
-      const containerEl = document.querySelector("#newsfeed"); //articleタグそのもの
+      // const containerEl = document.querySelector("#newsfeed"); //articleタグそのもの
       // containerEl.innerHTML = "";
-      // postFeedHtml();
+      postFeedHtml(bacefook.newsfeed[bacefook.newsfeed.length - 1]);
+      //タイムスタンプだけ再度変更しに行く
+      for (let i = 1; i < bacefook.newsfeed.length; i++) {
+        const postedDate = bacefook.newsfeed[i].timestamp;
+        const recalcuDate = calcDiffDate(postedDate);
+        changeTimestamp(i, recalcuDate);
+      }
     }
     initFlg = false;
     setTimeout(scheduler, (3 + Math.random() * 5) * 1000); // generate a new post every 3 to 8 seconds
