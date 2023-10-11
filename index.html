@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>DIG Bacefook Newsfeed</title>
     <script src="moment.js" defer></script>
-
+    <script src="contoroller.js " defer></script>
     <script src="dataGenerator.js" defer></script>
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <meta
       http-equiv="refresh"
       content="5;url=/Users/user/Documents/devs/BTC/week1/231010/precourse.bacefook-dig/index.html"
@@ -13,6 +20,33 @@
   </head>
   <body>
     <h1>Bacefook Newsfeed</h1>
-    <div id="newsfeed"></div>
+    <section class="showArea">
+      <nav class="showArea__nav">
+        <div id="user-name"></div>
+      </nav>
+      <main class="showArea__main">
+        <form action="">
+          <input
+            class="showArea__main--input"
+            id="input-text"
+            type="text"
+            placeholder="投稿内容を入力してください"
+          />
+          <input
+            id="input-feeling"
+            type="text"
+            placeholder="感情を入力してください"
+          />
+          <button id="btn">投稿</button>
+        </form>
+        <div id="newsfeed"></div>
+        <!-- <article id="newsfeed"></article> -->
+      </main>
+      <aside class="showArea__aside"></aside>
+    </section>
+    <!-- <div class="test-wrap">
+      <div class="test1">test1</div>
+      <div class="test2">test2</div>
+    </div> -->
   </body>
 </html>

@@ -1,0 +1,57 @@
+/* .test-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.test1 {
+  flex: 40%;
+}
+
+.test2 {
+  flex: 60%;
+} */
+
+h1 {
+  text-align: center;
+}
+.showArea {
+  display: flex;
+  width: 100%;
+}
+
+.showArea__nav {
+  flex: 30%;
+}
+
+.showArea__main {
+  flex: 40%;
+  /* overflow: scroll; */
+}
+
+.showArea__aside {
+  flex: 30%;
+}
+
+/* 書く記事よう */
+.showArea__main--article {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.showArea__main--frined {
+  font-size: 25px;
+}
+
+.showArea__main--date {
+  font-size: 8px;
+}
+
+.showArea__main--image {
+  text-align: center;
+}
+
+.showArea__main--input {
+  width: 200px;
+}

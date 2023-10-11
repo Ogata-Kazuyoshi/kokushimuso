@@ -112,18 +112,24 @@
     "",
   ];
   const feelings = [
-    "happy",
-    "smug",
-    "lovestruck",
-    "gross",
-    "scared",
-    "tired",
-    "angry",
-    "frustrated",
-    "excited",
+    "😃happy",
+    "😎smug",
+    "😍lovestruck",
+    "🤮gross",
+    "😱scared",
+    "😮‍💨tired",
+    "😤angry",
+    "😑frustrated",
+    "😆excited",
     "",
   ];
-  const images = [];
+  const images = [
+    "./images/image1.png",
+    "./images/image2.png",
+    "./images/image3.png",
+    "./images/image4.png",
+    "./images/image5.png",
+  ];
 
   const generateRandomText = () => {
     return [
@@ -141,13 +147,14 @@
     const timestamp = timeOffset
       ? new Date(new Date().getTime() - timeOffset)
       : new Date();
+    const momentDate = getDateString(timestamp);
     // console.log(timestamp);
     return {
       friend: getRandomElement(bacefook.friendNames),
       text: generateRandomText(),
       feeling: getRandomElement(feelings),
       image: getRandomElement(images),
-      timestamp,
+      timestamp: momentDate,
     };
   };
 
@@ -168,27 +175,17 @@
     createPost(timeOffset);
   }
 
+  let initFlg = true;
+
   const scheduler = () => {
     createPost(null);
-    const newFeed = bacefook.newsfeed[bacefook.newsfeed.length - 1];
-    const newDate = newFeed.timestamp;
-    const reasultDate = getDateString(newDate);
-    const resultFeeling = newFeed.feeling;
-    const containerEl = document.querySelector("#newsfeed");
-    const friendEl = document.createElement("div");
-    const imageElm = document.createElement("img");
-    imageElm.src = "./images/image4.jpeg";
-    imageElm.alt = "麻雀";
-    friendEl.className = "friend";
-    friendEl.innerText = `${newFeed.friend}  ${reasultDate}  ${resultFeeling}`;
-
-    const postEl = document.createElement("div");
-    postEl.innerText = newFeed.text;
-    postEl.append(friendEl);
-
-    containerEl.prepend(postEl);
+    if (!initFlg) {
+      const containerEl = document.querySelector("#newsfeed"); //articleタグそのもの
+      // containerEl.innerHTML = "";
+      // postFeedHtml();
+    }
+    initFlg = false;
     setTimeout(scheduler, (3 + Math.random() * 5) * 1000); // generate a new post every 3 to 8 seconds
   };
-
   scheduler();
 })();
