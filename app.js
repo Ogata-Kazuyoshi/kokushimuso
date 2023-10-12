@@ -37,6 +37,8 @@ window.addEventListener("load", () => {
   if (!username) {
     authentification();
   }
+  const allData = document.querySelector("#all-data");
+  allData.style.display = "block";
 
   // <img class="showArea__nav--img" src="images/user/ogata.png" alt="#" />
   //navタグの描写
@@ -71,10 +73,19 @@ window.addEventListener("load", () => {
     "./images/image5.png",
   ];
 
+  const getRandomNum = () => {
+    const maxvalue = 100;
+    return Math.floor(Math.random() * maxvalue);
+  };
+
   // This makes things appear
   for (let index = 0; index < bacefook.newsfeed.length; index++) {
     postFeedHtml(bacefook.newsfeed[index]);
   }
+
+  const reloadbutton = document.querySelector("#reload");
+  reloadbutton.addEventListener("click", handleReload);
+
   //addEvent for submit form
   const btn = document.querySelector("#btn");
   btn.addEventListener("click", (event) => {
@@ -83,20 +94,21 @@ window.addEventListener("load", () => {
     const text = textElm.value;
     const feelingElm = document.querySelector("#input-feeling");
     const feeling = feelingElm.value;
-    console.log(text);
+    // console.log(text);
     const newUserPost = {
       friend: username,
       text: text,
       feeling: feeling,
       image: getRandomElement(images),
       timestamp: getDateString(new Date()),
+      goodNum: getRandomNum(),
     };
 
     bacefook.friends[username] = [];
     bacefook.friends[username].push(newUserPost);
     bacefook.newsfeed.push(newUserPost);
     // console.log(newUserPost);
-    console.log(bacefook.newsfeed);
+    // console.log(bacefook.newsfeed);
 
     // const containerEl = document.querySelector("#newsfeed"); //articleタグそのもの
     // containerEl.innerHTML = "";

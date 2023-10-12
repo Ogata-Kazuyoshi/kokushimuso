@@ -6,10 +6,10 @@ const thumbsUpMove = (elm) => {
 };
 
 const clickHandler = (e) => {
-  console.log(e);
+  // console.log(e);
   if (e.target.dataset.btn) {
     const index = e.target.dataset.btn;
-    console.log(index);
+    // console.log(index);
     const thumbsUpElm = document.querySelector(`[data-btn="${index}"]`);
     const totThmsElm = document.querySelector(`[data-article="${index}"]`);
     const totText = totThmsElm.querySelector("label");
@@ -31,7 +31,7 @@ const clickHandler = (e) => {
     }
   } else if (e.target.dataset.trash) {
     const index = e.target.dataset.trash;
-    console.log(index);
+    // console`.log(index);
     const articleElm = document.querySelector(`[data-article="${index}"]`);
     articleElm.style.display = "none";
   }
@@ -117,7 +117,9 @@ function postFeedHtml(newFeed, postFlg = false) {
   const trashEl = document.createElement("div");
 
   if (postFlg) {
-    trashEl.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ff0000;" data-trash="${postCnt}"></i>`;
+    trashEl.innerHTML = `<i class="fa-solid fa-trash-can fa-lg" style="color: #ff0000;" data-trash="${postCnt}"></i>`;
+    stage.style.backgroundColor = "#f4f4dd";
+    stage.style.border = "3px solid #cacaca";
   }
 
   const headerEl = document.createElement("div");
@@ -169,3 +171,9 @@ function postFeedHtml(newFeed, postFlg = false) {
 
   containerEl.prepend(stage);
 }
+
+const handleReload = () => {
+  console.log("clicked!");
+  localStorage.clear();
+  window.location.reload();
+};

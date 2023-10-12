@@ -200,3 +200,13 @@ section {
 #newsfeed {
   margin-top: 40px;
 }
+
+#user-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#all-data {
+  display: none;
+  border-bottom: 1px solid #f4f4dd;
+}

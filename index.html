@@ -19,74 +19,76 @@
     /> -->
   </head>
   <body>
-    <header class="header">
-      <div class="header__fbicon">
-        <i
-          class="fa-brands fa-facebook fa-3x fa-spin"
-          style="color: #3b5998"
-        ></i>
-      </div>
-      <nav class="header__navicon">
-        <i class="fa-solid fa-house"></i>
-        <i class="fa-solid fa-video"></i>
-        <i class="fa-solid fa-store"></i>
-        <i class="fa-solid fa-user-group"></i>
-        <i class="fa-solid fa-gamepad"></i>
-      </nav>
-      <aside class="header__asideicon">
-        <i class="fa-solid fa-ellipsis-vertical aside-icon"></i>
-        <i class="fa-solid fa-comment-sms aside-icon"></i>
-        <i class="fa-regular fa-bell aside-icon"></i>
-      </aside>
-      <!-- <h1>Bacefook Newsfeed</h1> -->
-    </header>
-    <section class="showArea">
-      <nav class="showArea__nav">
-        <div class="showArea__nav--userInfo" id="usernav">
-          <div id="user-name"></div>
+    <div id="all-data">
+      <header class="header">
+        <div class="header__fbicon" id="reload">
+          <i
+            class="fa-brands fa-facebook fa-3x fa-spin"
+            style="color: #3b5998"
+          ></i>
         </div>
-        <ul>
-          <li>最近の投稿</li>
-          <li>古い投稿</li>
-          <li>いいね数が多い投稿</li>
-          <li>自分がいいねした投稿</li>
-        </ul>
-      </nav>
-      <main class="showArea__main">
-        <div class="showArea__main--postArea">
-          <p class="showArea__main--newPost">新規投稿</p>
-          <form action="" class="showArea__main--form">
-            <div class="showArea__main--input">
-              <input
-                id="input-text"
-                type="text"
-                placeholder="投稿内容を入力してください"
-              />
-            </div>
-            <div class="showArea__main--inputFeeling">
-              <input
-                id="input-feeling"
-                type="text"
-                placeholder="感情を入力してください"
-              />
-            </div>
-            <div class="showArea__main--postButton">
-              <button id="btn">投稿</button>
-            </div>
-          </form>
-        </div>
-        <div id="newsfeed"></div>
-        <!-- <article id="newsfeed"></article> -->
-      </main>
-      <aside class="showArea__aside">
-        <div class="showArea__aside--wrap" id="asideWrap">
-          <div class="showArea__aside--content">友達</div>
-        </div>
-      </aside>
-    </section>
-    <!-- <div class="test-wrap">
-      <div class="test1">test1</div>
-      <div class="test2">test2</div>
-    </div> -->
+        <nav class="header__navicon">
+          <i class="fa-solid fa-house"></i>
+          <i class="fa-solid fa-video"></i>
+          <i class="fa-solid fa-store"></i>
+          <i class="fa-solid fa-user-group"></i>
+          <i class="fa-solid fa-gamepad"></i>
+        </nav>
+        <aside class="header__asideicon">
+          <i class="fa-solid fa-ellipsis-vertical aside-icon"></i>
+          <i class="fa-solid fa-comment-sms aside-icon"></i>
+          <i class="fa-regular fa-bell aside-icon"></i>
+        </aside>
+        <!-- <h1>Bacefook Newsfeed</h1> -->
+      </header>
+      <section class="showArea">
+        <nav class="showArea__nav">
+          <div class="showArea__nav--userInfo" id="usernav">
+            <div id="user-name"></div>
+          </div>
+          <ul>
+            <li>最近の投稿</li>
+            <li>古い投稿</li>
+            <li>いいね数が多い投稿</li>
+            <li>自分がいいねした投稿</li>
+          </ul>
+        </nav>
+        <main class="showArea__main">
+          <div class="showArea__main--postArea">
+            <p class="showArea__main--newPost">新規投稿</p>
+            <form action="" class="showArea__main--form">
+              <div class="showArea__main--input">
+                <input
+                  id="input-text"
+                  type="text"
+                  placeholder="投稿内容を入力してください"
+                />
+              </div>
+              <div class="showArea__main--inputFeeling">
+                <input
+                  id="input-feeling"
+                  type="text"
+                  placeholder="感情を入力してください"
+                />
+              </div>
+              <div class="showArea__main--postButton">
+                <button id="btn">投稿</button>
+              </div>
+            </form>
+          </div>
+          <div id="newsfeed"></div>
+          <!-- <article id="newsfeed"></article> -->
+        </main>
+        <aside class="showArea__aside">
+          <div class="showArea__aside--wrap" id="asideWrap">
+            <div class="showArea__aside--content">友達</div>
+          </div>
+        </aside>
+      </section>
+      <!-- <div class="test-wrap">
+        <div class="test1">test1</div>
+        <div class="test2">test2</div>
+      </div> -->
+    </div>
   </body>
 </html>
