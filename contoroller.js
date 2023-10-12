@@ -6,27 +6,34 @@ const thumbsUpMove = (elm) => {
 };
 
 const clickHandler = (e) => {
-  // console.log(e.target);
-  const index = e.target.dataset.btn;
-  // console.log(index);
-  const thumbsUpElm = document.querySelector(`[data-btn="${index}"]`);
-  const totThmsElm = document.querySelector(`[data-article="${index}"]`);
-  const totText = totThmsElm.querySelector("label");
-  // console.log(totText);
-  if (thumbsUpElm.classList.contains("fa-regular")) {
-    thumbsUpElm.classList.remove("fa-regular");
-    thumbsUpElm.classList.add("fa-solid");
-    thumbsUpElm.classList.add("fa-bounce");
-    thumbsUpElm.style = "color: #e0d900;";
-    const temp = `あなた、他${String(totText.innerText)} 人`;
-    totText.innerText = temp;
-    thumbsUpMove(thumbsUpElm);
-  } else {
-    thumbsUpElm.classList.remove("fa-solid");
-    thumbsUpElm.classList.add("fa-regular");
-    thumbsUpElm.style = "color: #000000;";
-    const temp = `${totText.innerText.slice(5, 7)}`;
-    totText.innerText = temp;
+  console.log(e);
+  if (e.target.dataset.btn) {
+    const index = e.target.dataset.btn;
+    console.log(index);
+    const thumbsUpElm = document.querySelector(`[data-btn="${index}"]`);
+    const totThmsElm = document.querySelector(`[data-article="${index}"]`);
+    const totText = totThmsElm.querySelector("label");
+    // console.log(totText);
+    if (thumbsUpElm.classList.contains("fa-regular")) {
+      thumbsUpElm.classList.remove("fa-regular");
+      thumbsUpElm.classList.add("fa-solid");
+      thumbsUpElm.classList.add("fa-bounce");
+      thumbsUpElm.style = "color: #e0d900;";
+      const temp = `あなた、他${String(totText.innerText)} 人`;
+      totText.innerText = temp;
+      thumbsUpMove(thumbsUpElm);
+    } else {
+      thumbsUpElm.classList.remove("fa-solid");
+      thumbsUpElm.classList.add("fa-regular");
+      thumbsUpElm.style = "color: #000000;";
+      const temp = `${totText.innerText.slice(5, 7)}`;
+      totText.innerText = temp;
+    }
+  } else if (e.target.dataset.trash) {
+    const index = e.target.dataset.trash;
+    console.log(index);
+    const articleElm = document.querySelector(`[data-article="${index}"]`);
+    articleElm.style.display = "none";
   }
 };
 
@@ -90,7 +97,7 @@ const changeTimestamp = (index, recalcuDate) => {
 
 let postCnt = 0;
 
-function postFeedHtml(newFeed) {
+function postFeedHtml(newFeed, postFlg = false) {
   const reasultDate = newFeed.timestamp;
   const calcDiff = calcDiffDate(reasultDate);
   const resultFeeling = newFeed.feeling;
@@ -106,7 +113,19 @@ function postFeedHtml(newFeed) {
   friendEl.className = "showArea__main--frined";
   // friendEl.innerText = `${newFeed.friend}  ${reasultDate}  ${resultFeeling}`;
   friendEl.innerText = `NAME : ${newFeed.friend}`;
-  stage.append(friendEl);
+
+  const trashEl = document.createElement("div");
+
+  if (postFlg) {
+    trashEl.innerHTML = `<i class="fa-solid fa-trash-can" style="color: #ff0000;" data-trash="${postCnt}"></i>`;
+  }
+
+  const headerEl = document.createElement("div");
+  headerEl.className = "showArea__main--header";
+  headerEl.append(friendEl);
+  headerEl.append(trashEl);
+
+  stage.append(headerEl);
   //タイムスタンプ用のタグを追加 最初の１０個の投稿の際には、普通に作る。追加のものが来た際には、タイムスタンプの部分だけHtmlを書き換える
   const timeEl = document.createElement("div");
   timeEl.className = "showArea__main--date";

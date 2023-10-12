@@ -8,7 +8,14 @@
   window.bacefook = {};
   bacefook.newsfeed = [];
   bacefook.friends = {};
-  bacefook.friendNames = ["tamaroh", "kani", "eriko", "tsubasa", "masataka"];
+  bacefook.friendNames = [
+    "tamaroh",
+    "kani",
+    "eriko",
+    "tsubasa",
+    "masataka",
+    "adachi",
+  ];
   bacefook.friendNames.forEach((name) => {
     bacefook.friends[name] = [];
   });
@@ -108,7 +115,6 @@
     "#hashtags",
     "#japanlife",
     "#oops",
-    "",
   ];
   const feelings = [
     "😃happy",
@@ -120,7 +126,6 @@
     "😤angry",
     "😑frustrated",
     "😆excited",
-    "",
   ];
   const images = [
     "./images/image1.png",

@@ -42,27 +42,47 @@
     </header>
     <section class="showArea">
       <nav class="showArea__nav">
-        <div id="user-name"></div>
+        <div class="showArea__nav--userInfo" id="usernav">
+          <div id="user-name"></div>
+        </div>
+        <ul>
+          <li>最近の投稿</li>
+          <li>古い投稿</li>
+          <li>いいね数が多い投稿</li>
+          <li>自分がいいねした投稿</li>
+        </ul>
       </nav>
       <main class="showArea__main">
-        <form action="">
-          <input
-            class="showArea__main--input"
-            id="input-text"
-            type="text"
-            placeholder="投稿内容を入力してください"
-          />
-          <input
-            id="input-feeling"
-            type="text"
-            placeholder="感情を入力してください"
-          />
-          <button id="btn">投稿</button>
-        </form>
+        <div class="showArea__main--postArea">
+          <p class="showArea__main--newPost">新規投稿</p>
+          <form action="" class="showArea__main--form">
+            <div class="showArea__main--input">
+              <input
+                id="input-text"
+                type="text"
+                placeholder="投稿内容を入力してください"
+              />
+            </div>
+            <div class="showArea__main--inputFeeling">
+              <input
+                id="input-feeling"
+                type="text"
+                placeholder="感情を入力してください"
+              />
+            </div>
+            <div class="showArea__main--postButton">
+              <button id="btn">投稿</button>
+            </div>
+          </form>
+        </div>
         <div id="newsfeed"></div>
         <!-- <article id="newsfeed"></article> -->
       </main>
-      <aside class="showArea__aside"></aside>
+      <aside class="showArea__aside">
+        <div class="showArea__aside--wrap" id="asideWrap">
+          <div class="showArea__aside--content">友達</div>
+        </div>
+      </aside>
     </section>
     <!-- <div class="test-wrap">
       <div class="test1">test1</div>

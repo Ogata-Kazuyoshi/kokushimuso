@@ -18,6 +18,10 @@ header {
   border-bottom: 1px solid #cacaca;
 }
 
+li {
+  margin-bottom: 10px;
+}
+
 .header__fbicon {
   margin-left: 40px;
   flex: 30%;
@@ -61,6 +65,19 @@ section {
   margin-top: 20px;
   margin-left: 10px;
   border-right: 1px solid #cacaca;
+  padding-left: 20px;
+}
+
+.showArea__nav--userInfo {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.showArea__nav--img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 20px;
 }
 
 .showArea__main {
@@ -71,16 +88,73 @@ section {
   border-right: 1px solid #cacaca;
 }
 
+.showArea__main--header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
 .showArea__aside {
   flex: 30%;
   margin-left: 10px;
   margin-top: 20px;
 }
 
-/* 書く記事よう */
-.showArea__main--input {
-  width: 200px;
+.showArea__main--postArea {
+  background-color: #d7d7d7;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
+
+.showArea__main--newPost {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 書く記事よう */
+.showArea__main--form {
+  display: flex;
+}
+
+.showArea__main--input {
+  flex: 55%;
+}
+
+.showArea__main--input input {
+  width: 95%;
+}
+
+.showArea__main--inputFeeling {
+  flex: 30%;
+}
+
+.showArea__main--inputFeeling input {
+  width: 95%;
+}
+
+.showArea__main--postButton {
+  flex: 15%;
+  text-align: center;
+}
+
+.showArea__main--postButton button {
+  background-color: rgb(226, 226, 0);
+  transition: all 0.3;
+  border-radius: 5px;
+}
+
+.showArea__main--postButton button:hover {
+  font-weight: bold;
+  background-color: yellow;
+  transform: translate(3px, 3px);
+  border-radius: 5px;
+}
+
+/* .showArea__main--input {
+  width: 200px;
+} */
 
 .showArea__main--article {
   /* border: 2px solid #000000; */
@@ -98,7 +172,7 @@ section {
   font-size: 8px;
 }
 .showArea__main--feeling {
-  text-align: end;
+  text-align: right;
   margin-right: 10px;
 }
 
@@ -112,4 +186,17 @@ section {
 .showArea__main--totText {
   font-size: 12px;
   margin-left: 5px;
+}
+
+.showArea__aside--content {
+  color: #707171;
+  border-bottom: 1px solid #707171;
+}
+
+.showArea__aside--friend {
+  margin-top: 10px;
+}
+
+#newsfeed {
+  margin-top: 40px;
 }
