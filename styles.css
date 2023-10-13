@@ -42,10 +42,6 @@ li {
   margin-right: 40px;
 }
 
-.aside-icon {
-  margin-left: 20px;
-}
-
 h1 {
   text-align: center;
 }
@@ -113,6 +109,10 @@ section {
   font-weight: bold;
 }
 
+.showArea__main--trash:hover {
+  cursor: pointer;
+}
+
 /* 書く記事よう */
 .showArea__main--form {
   display: flex;
@@ -150,11 +150,8 @@ section {
   background-color: yellow;
   transform: translate(3px, 3px);
   border-radius: 5px;
+  cursor: pointer;
 }
-
-/* .showArea__main--input {
-  width: 200px;
-} */
 
 .showArea__main--article {
   /* border: 2px solid #000000; */
@@ -188,6 +185,10 @@ section {
   margin-left: 5px;
 }
 
+.showArea__main--thumsup {
+  cursor: pointer;
+}
+
 .showArea__aside--content {
   color: #707171;
   border-bottom: 1px solid #707171;
@@ -209,4 +210,33 @@ section {
 #all-data {
   display: none;
   border-bottom: 1px solid #f4f4dd;
+}
+
+.aside-icon {
+  margin-left: 20px;
+}
+
+.text-hover {
+  position: relative;
+  margin-left: 20px;
+}
+
+.text-hover label {
+  display: none;
+  transition: all 0.3;
+}
+
+.text-hover:hover {
+  scale: 1.4;
+}
+
+.text-hover:hover label {
+  display: block;
+  position: absolute;
+  font-size: 6px;
+  background-color: rgba(255, 181, 232, 0.216);
+  border-radius: 6px;
+  padding: 2em;
+  left: -20px;
+  top: -35px;
 }

@@ -115,6 +115,7 @@ function postFeedHtml(newFeed, postFlg = false) {
   friendEl.innerText = `NAME : ${newFeed.friend}`;
 
   const trashEl = document.createElement("div");
+  trashEl.className = "showArea__main--trash";
 
   if (postFlg) {
     trashEl.innerHTML = `<i class="fa-solid fa-trash-can fa-lg" style="color: #ff0000;" data-trash="${postCnt}"></i>`;
